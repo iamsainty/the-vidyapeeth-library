@@ -7,6 +7,8 @@ import {
   FaUniversity,
   FaScroll,
   FaFeatherAlt,
+  FaWhatsapp,  // Import WhatsApp icon
+  FaMapMarkerAlt // Import Location icon
 } from "react-icons/fa";
 
 const quotes = [
@@ -77,7 +79,7 @@ const Title = styled.div`
 
 const Text = styled.span`
   color: #333;
-  font-weight: 600; /* Slightly reduced weight for better balance */
+  font-weight: 600;
   font-size: 55px;
   margin: 0 10px;
   @media (max-width: 768px) {
@@ -111,7 +113,7 @@ const QuoteContainer = styled.div`
   align-items: center;
   color: #333;
   font-size: 22px;
-  margin-top: 30px; /* Reduced margin for better spacing */
+  margin-top: 30px;
   height: 20vh;
   @media (max-width: 768px) {
     font-size: 16px;
@@ -122,7 +124,7 @@ const QuoteText = styled.p`
   opacity: ${(props) => (props.fade ? 1 : 0)};
   animation: ${(props) => (props.fade ? fadeIn : fadeOut)} 0.75s ease;
   transition: opacity 0.75s ease;
-  margin: 5px 0; /* Added margin for clarity */
+  margin: 5px 0;
 `;
 
 const IconContainer = styled.div`
@@ -161,6 +163,37 @@ const Icon = styled.div`
   }
 `;
 
+const ButtonContainer = styled.div`
+  display: flex;
+  justify-content: center;
+  margin-top: 30px;
+
+  @media (max-width: 768px) {
+    flex-direction : column;
+  }
+`;
+
+const Button = styled.a`
+  background-color: #457b9d;
+  color: white;
+  font-size: 18px;
+  padding: 10px 20px;
+  border-radius: 5px;
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  margin: 5px 15px;
+
+  svg {
+    margin-right: 8px;
+  }
+
+  @media (max-width: 768px) {
+    justify-content : center;
+    width: 80vw;
+  }
+`;
+
 function HeroSection() {
   const [currentQuote, setCurrentQuote] = useState({ quote: "", author: "" });
   const [fade, setFade] = useState(true);
@@ -194,13 +227,13 @@ function HeroSection() {
         <Icon top={50} left={20} color="#2a9d8f">
           <FaGlasses />
         </Icon>
-        <Icon top={70} left={60} color="#f4a261">
+        <Icon top={60} left={70} color="#f4a261">
           <FaUniversity />
         </Icon>
-        <Icon top={80} left={30} color="#e9c46a">
+        <Icon top={65} left={30} color="#e9c46a">
           <FaScroll />
         </Icon>
-        <Icon top={40} left={70} color="#ff6b6b">
+        <Icon top={40} left={50} color="#ff6b6b">
           <FaFeatherAlt />
         </Icon>
       </IconContainer>
@@ -216,6 +249,21 @@ function HeroSection() {
         <QuoteText fade={fade}>{currentQuote.quote}</QuoteText>
         <QuoteText fade={fade}>- {currentQuote.author}</QuoteText>
       </QuoteContainer>
+      
+      <ButtonContainer>
+        <Button 
+          href={`https://wa.me/919369653234?text=Hello, I reached you through your website and want to know more about the Vidyapeeth library.`} 
+          target="_blank"
+        >
+          <FaWhatsapp /> Know More
+        </Button>
+        <Button 
+          href="https://maps.app.goo.gl/t319gb4zV85eav5c9" 
+          target="_blank"
+        >
+          <FaMapMarkerAlt /> Get Location
+        </Button>
+      </ButtonContainer>
     </Container>
   );
 }
