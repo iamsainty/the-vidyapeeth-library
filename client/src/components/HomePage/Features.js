@@ -3,7 +3,6 @@ import styled, { keyframes } from "styled-components";
 import {
   FaChair,
   FaSnowflake,
-  FaFire,
   FaTint,
   FaFilePdf,
   FaWind,
@@ -27,6 +26,7 @@ function Features() {
 
   const LeftHalf = styled.div`
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
     width: 40%;
@@ -62,6 +62,18 @@ function Features() {
 
     @media (max-width: 768px) {
       font-size: 36px;
+    }
+  `;
+
+  const Subtitle = styled.p`
+    font-size: 20px;
+    color: #555;
+    margin-top: 10px;
+    text-align : center;
+    display: none; 
+
+    @media (min-width: 769px) {
+      display: block; 
     }
   `;
 
@@ -140,13 +152,10 @@ function Features() {
           <Icon top={20} left={70} color="#457b9d">
             <FaSnowflake />
           </Icon>
-          <Icon top={40} left={30} color="#f4a261">
-            <FaFire />
-          </Icon>
-          <Icon top={60} left={60} color="#2a9d8f">
+          <Icon top={35} left={40} color="#2a9d8f">
             <FaTint />
           </Icon>
-          <Icon top={80} left={20} color="#e9c46a">
+          <Icon top={70} left={20} color="#e9c46a">
             <FaFilePdf />
           </Icon>
           <Icon top={50} left={80} color="#ff6b6b">
@@ -156,6 +165,11 @@ function Features() {
 
         <LeftHalf>
           <Title>Features</Title>
+          <Subtitle>
+            Our innovative features are designed to enhance your experience,
+            providing comfort, convenience, and a supportive environment.
+          </Subtitle>{" "}
+          {/* New sentence added here */}
         </LeftHalf>
         <RightHalf>
           <FeaturesList>

@@ -1,14 +1,6 @@
 import React from "react";
 import styled, { keyframes } from "styled-components";
-import {
-  FaBook,
-  FaUsers,
-  FaLightbulb,
-  FaHandsHelping,
-} from "react-icons/fa";
-
-
-
+import { FaBook, FaUsers, FaLightbulb, FaHandsHelping } from "react-icons/fa";
 
 // Styled components
 const Container = styled.div`
@@ -29,6 +21,7 @@ const LeftHalf = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
+  flex-direction: column;
   padding: 20px;
   width: 40%;
   height: 40vh;
@@ -62,6 +55,18 @@ const Title = styled.h2`
   @media (max-width: 768px) {
     font-size: 36px;
     font-weight: bold;
+  }
+`;
+
+const Subtitle = styled.div`
+  font-size: 20px;
+  color: #555;
+  margin-top: 10px;
+  text-align: center;
+  display: none;
+
+  @media (min-width: 769px) {
+    display: block;
   }
 `;
 
@@ -113,7 +118,6 @@ const Icon = styled.div`
 `;
 
 function About() {
-
   return (
     <Container>
       <IconContainer>
@@ -133,6 +137,11 @@ function About() {
 
       <LeftHalf>
         <Title>About</Title>
+        <Subtitle>
+          Bridging the gap to a world of books.
+          <br />
+          Making reading accessible for all.
+        </Subtitle>
       </LeftHalf>
       <RightHalf>
         <Description>
