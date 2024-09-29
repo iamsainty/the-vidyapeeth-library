@@ -10,7 +10,7 @@ import { FaRegClock, FaFileInvoiceDollar } from "react-icons/fa";
 const faqs = [
   {
     question: "What are the library hours?",
-    answer: "The library is open from 7:00 AM to 7:00 PM on weekdays.",
+    answer: "The library is open from 7:00 AM to 7:00 PM.",
   },
   {
     question: "Is Wi-Fi available at the library?",
@@ -19,17 +19,12 @@ const faqs = [
   {
     question: "How do I register for the library?",
     answer:
-      "You can register online through our website or visit us in person.",
+      "You can register through in person, contact are given below",
   },
   {
-    question: "Can I borrow books from the library?",
+    question: "On what days library is open ?",
     answer:
-      "Yes, registered members can borrow up to 5 books at a time for a period of 2 weeks.",
-  },
-  {
-    question: "Are there any fees for late returns?",
-    answer:
-      "Yes, there is a late fee of ₹10 per day for each book not returned on time.",
+      "The library is open on all 7 days of the week",
   },
 ];
 
