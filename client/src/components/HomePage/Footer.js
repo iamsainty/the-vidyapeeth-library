@@ -6,6 +6,10 @@ const FooterContainer = styled.div`
   background-color: #1a1a1a;
   color: white;
   padding: 20px 0; /* Adjust the padding around the footer */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 `;
 
 const Container = styled.div`
@@ -75,10 +79,10 @@ const ContactLink = styled.a`
 `;
 
 const Credits = styled.p`
+  width: 80%;
   margin-top: 30px;
-  text-align: center;
   font-size: 1rem;
-  padding: 10px 20px;
+  padding: 20px 0;
   border-top: 1px solid #333;
 
   a {
@@ -142,14 +146,10 @@ function Footer() {
           />
         </MapContainer>
       </Container>
+
       <Credits>
-        <a
-          href="https://hey-sainty.web.app/"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Designed and Developed with &hearts; by Priyanshu Chaurasiya
-        </a>
+        Designed and Developed with &hearts; by{" "}
+        <a href="https://hey-sainty.vercel.app/">Priyanshu Chaurasiya</a>
       </Credits>
     </FooterContainer>
   );

@@ -35,6 +35,7 @@ const LeftHalf = styled.div`
 const RightHalf = styled.div`
   padding: 40px;
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
   text-align: center;
@@ -117,6 +118,33 @@ const Icon = styled.div`
   }
 `;
 
+const Button = styled.a`
+  background-color: #457b9d;
+  color: white;
+  font-size: 18px;
+  padding: 10px 20px;
+  border-radius: 5px;
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  margin: 5px 15px;
+
+  svg {
+    margin-right: 8px;
+  }
+
+  @media (max-width: 768px) {
+    justify-content: center;
+    width: 80vw;
+  }
+`;
+
+const Text = styled.p`
+  font-size: 18px;
+  color: #555;
+  margin-top: 20px;
+`;
+
 function About() {
   return (
     <Container>
@@ -130,7 +158,7 @@ function About() {
         <Icon top={40} left={30} color="#2a9d8f">
           <FaLightbulb />
         </Icon>
-        <Icon top={60} left={60} color="#f4a261">
+        <Icon top={60} left={80} color="#f4a261">
           <FaHandsHelping />
         </Icon>
       </IconContainer>
@@ -151,6 +179,10 @@ function About() {
           available for the people in the villages, fostering a love for
           reading, and encouraging lifelong learning.
         </Description>
+        <Text>Curious to know more about the development ?</Text>
+        <a href="https://hey-sainty.vercel.app/blog/the-vidyapeeth-library">
+          <Button>Read Blog</Button>
+        </a>
       </RightHalf>
     </Container>
   );
